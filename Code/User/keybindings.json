@@ -1,0 +1,212 @@
+[
+  // Switching windows / navigation
+  //When in vim mode
+  // {
+  //   "key": "space ,",
+  //   "command": "workbench.action.showAllEditors",
+  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  // },
+  //When in non-vim window's input
+  {
+    "key": "ctrl-h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl-l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl-k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl-j",
+    "command": "workbench.action.navigateDown"
+  },
+  //Switching tabs 
+  //When in non-vim window's input
+  {
+    "key": "ctrl-shift-l",
+    "command": "workbench.action.nextEditorInGroup",
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || inputFocus)"
+  },
+  {
+    "key": "ctrl-shift-h",
+    "command": "workbench.action.previousEditorInGroup",
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || inputFocus)"
+  },
+  //Toggle explorer
+  {
+    "key": "space e",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    },
+    "when": "sideBarFocus && !inputFocus"
+  },
+  //Go back to editor from explorer
+  {
+    "key": "space w l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  //switching tabs inside a group
+  // {
+  //   "key": "shift-l",
+  //   "command": "workbench.action.nextEditorInGroup",
+  //   "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+  // },
+  // {
+  //   "key": "shift-h",
+  //   "command": "workbench.action.previousEditorInGroup",
+  //   "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+  // },
+
+  // //Code action
+  // //close active editor
+  {
+    "key": "ctrl-b d",
+    "command": "workbench.action.closeActiveEditor",
+  },
+  // //close all editors in all editors in all groups
+  {
+    "key": "ctrl-b D",
+    "command": "workbench.action.closeEditorInAllGroups",
+  },
+  {
+    "key": "ctrl-b g d",
+    "command": "workbench.action.closeEditorInAllGroups",
+  },
+  {
+    "key": "ctrl-b o",
+    "command": "workbench.action.closeOtherEditors",
+  },
+  {
+    "key": "ctrl-b o",
+    "command": "workbench.action.closeOtherEditors",
+  },
+  {
+    "key": "ctrl-b h",
+    "command": "workbench.action.closeEditorsToTheLeft",
+  },
+  {
+    "key": "ctrl-b l",
+    "command": "workbench.action.closeEditorsToTheRight",
+  },
+  {
+    "key": "ctrl-b p",
+    "command": "workbench.action.pinEditor",
+    "when": "editorFocus && !activeEditorIsPinned"
+  },
+  {
+    "key": "ctrl-b p",
+    "command": "workbench.action.unpinEditor",
+    "when": "editorFocus && activeEditorIsPinned"
+  },
+  {
+    "key": "ctrl-b shift-p",
+    "command": "workbench.action.toggleSeparatePinnedEditorTabs",
+  },
+  {
+    "key": "space j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "space k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion"
+  },
+  // File Explorer
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "shift-a",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "s",
+    "command": "explorer.openToSide",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "shift-s",
+    "command": "runCommands",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
+    "args": {
+      "commands": [
+        "workbench.action.splitEditorDown",
+        "explorer.openAndPassFocus",
+        "workbench.action.closeOtherEditors",
+      ]
+    }
+  },
+  {
+    "key": "enter",
+    "command": "explorer.openAndPassFocus",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
+  },
+  {
+    "key": "enter", "command": "list.toggleExpand", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus" }, { "key": "shift-c",
+    "command": "list.collapseAll",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "c",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "list.focusParent",
+        "list.toggleExpand",
+      ]
+    },
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "/",
+    "command": "list.find",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "g g",
+    "command": "list.focusAnyFirst",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "shift-g",
+    "command": "list.focusAnyLast",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+]

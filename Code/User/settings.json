@@ -1,0 +1,298 @@
+{
+    "go.formatTool": "goimports",
+    "workbench.colorTheme": "Monokai Pro",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    //Vim settings
+    "vim.leader": " ",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [ 
+        // Switching windows / navigation
+        {
+            "before": ["<leader>", "w", "h"],
+            "commands": ["workbench.action.navigateLeft"]
+        },
+        {
+            "before": ["<leader>", "w", "l"],
+            "commands": ["workbench.action.navigateRight"]
+        }, 
+        {
+            "before": ["<leader>", "w", "k"],
+            "commands": ["workbench.action.navigateUp"]
+        },
+        {
+            "before": ["<leader>", "w", "j"],
+            "commands": ["workbench.action.navigateDown"]
+        },
+        //Switching tabs
+        {
+            "before": ["L"],
+            "commands": ["workbench.action.nextEditorInGroup"]
+        }, 
+        {
+            "before": ["H"],
+            "commands": ["workbench.action.previousEditorInGroup"]
+        },
+        //Toggle explorer 
+        {
+            "before": ["<leader>", "e"],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.files.action.focusFilesExplorer"
+            ]
+        },
+        //Coding
+        //Moving lines up and down
+        {
+            "before": ["K"],
+            "commands": ["editor.action.showHover"]
+        },
+        {
+            "before": ["<leader>","c", "a"],
+            "commands": ["editor.action.codeAction"]
+        },
+        //rename object in entire code
+        {
+            "before": ["<leader>", "c", "r"],
+            "commands": ["editor.action.rename"]
+        },
+        {
+            "before": ["<leader>","c","s"],
+            "commands": ["workbench.action.gotoSymbol"]
+        },
+        //close active editor
+        {
+            "before": ["<leader>", "b", "d"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        //close all editors
+        {
+            "before": ["<leader>", "b", "D"],
+            "commands": ["workbench.action.closeEditorInAllGroups"]
+        },
+        //close other editor
+        {
+            "before": ["<leader>", "b", "o"],
+            "commands": ["workbench.action.closeOtherEditors"]
+        },
+        {
+            "before": ["<leader>", "b", "h"],
+            "commands": ["workbench.action.closeEditorsToTheLeft"]
+        },
+        {
+            "before": ["<leader>", "b", "l"],
+            "commands": ["workbench.action.closeEditorsToTheRight"]
+        },
+        //Pin and unpin editors
+        {
+            "before": ["<leader>", "b", "p"],
+            "commands": ["workbench.action.pinEditor"],
+        },
+        {
+            "before": ["<leader>", "b", "u", "p"],
+            "commands": ["workbench.action.unpinEditor"],
+        },
+        {
+            "before": ["<leader>", "b", "P"],
+            "commands": ["workbench.action.toggleSeparatePinnedEditorTabs"],
+        },
+        //close editors in a group
+        {
+            "before": ["<leader>", "b", "g","d"],
+            "commands": ["workbench.action.closeEditorsAndGroup"]
+        },
+        //Splits
+        //Split vertical
+        {
+            "before": ["<leader>", "|"],
+            "commands": ["workbench.action.splitEditor"]
+        },
+        //Split Horizontal
+        {
+            "before": ["<leader>", "-"],
+            "commands": ["workbench.action.splitEditorDown"]
+        },
+        //Inside group movements
+        //Move tab to right in group
+        {
+            "before": ["<leader>", "t", "l"],
+            "commands": ["workbench.action.moveEditorRightInGroup"]
+        },
+        //Move tab to left in group
+        {
+            "before": ["<leader>", "t", "h"],
+            "commands": ["workbench.action.moveEditorLeftInGroup"]
+        },
+        //Between group movements
+        //Move tab to right group
+        {
+            "before": ["<leader>", "g", "l"],
+            "commands": ["workbench.action.moveEditorToRightGroup"]
+        },
+        //Move tab to left group
+        {
+            "before": ["<leader>", "g", "h"],
+            "commands": ["workbench.action.moveEditorToLeftGroup"]
+        },
+        //Move tab to upper group
+        {
+            "before": ["<leader>", "g", "k"],
+            "commands": ["workbench.action.moveEditorToAboveGroup"]
+        },
+        //Move tab to lower group
+        {
+            "before": ["<leader>", "g", "j"],
+            "commands": ["workbench.action.moveEditorToBelowGroup"]
+        },
+        //Entire Group movements
+        //Move group to right
+        {
+            "before": ["<leader>", "y", "l"],
+            "commands": ["workbench.action.moveActiveEditorGroupRight"]
+        },
+        //Move tab to left group
+        {
+            "before": ["<leader>", "y", "h"],
+            "commands": ["workbench.action.moveActiveEditorGroupLeft"]
+        },
+        //Move tab to upper group
+        {
+            "before": ["<leader>", "y", "k"],
+            "commands": ["workbench.action.moveActiveEditorGroupUp"]
+        },
+        //Move tab to lower group
+        {
+            "before": ["<leader>", "y", "j"],
+            "commands": ["workbench.action.moveActiveEditorGroupDown"]
+        },
+        //
+        //Resize views
+        //Increase width
+        {
+            "before": ["<leader>", "r", "l"],
+            "commands": ["workbench.action.increaseViewWidth"]
+        },
+        //Decrease width
+        {
+            "before": ["<leader>", "r", "h"],
+            "commands": ["workbench.action.decreaseViewWidth"]
+        },
+        //Increase height
+        {
+            "before": ["<leader>", "r", "k"],
+            "commands": ["workbench.action.increaseViewHeight"]
+        },
+        //Decrease height
+        {
+            "before": ["<leader>", "r", "j"],
+            "commands": ["workbench.action.decreaseViewHeight"]
+        },
+        //Quick open menu
+        {
+            "before": ["<leader>", "<leader>"],
+            "commands": ["workbench.action.quickOpen"],
+        },
+        {
+            "before": ["<leader>", "g", "d"],
+            "commands": ["editor.action.revealDefinition"],
+        },
+        {
+            "before": ["<leader>", "g", "r"],
+            "commands": ["editor.action.goToReferences"],
+        },
+        {
+            "before": ["<leader>", "s", "g"],
+            "commands": ["workbench.action.findInFiles"],
+        },
+        {
+            "before": ["<leader>", "g", "g"],
+            "commands": [
+                "workbench.view.scm", 
+                "workbench.scm.focus"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["J"],
+            "commands": ["editor.action.moveLinesUpAction"]
+        },
+        {
+            "before": ["K"],
+            "commands": ["editor.action.moveLinesDownAction"]
+        },
+    ],
+    "vim.handleKeys": {
+        "<C-n>": false,
+    },
+    "vim.useSystemClipboard": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "explorer.confirmDelete": false,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.fontFamily": "'Fira Code','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "relative",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+    "editor.fontWeight": "540",
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "[java]": {
+        "editor.defaultFormatter": "mwpb.java-prettier-formatter"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "[go]": {
+        "editor.formatOnSave": false
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "window.zoomLevel": 1,
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
+}
